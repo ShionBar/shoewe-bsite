@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bgShhoe">
+        <img src="img/bgshoe1.jpg">
+    </div>
+    <div class="login-container">
+        <h1>Login Form</h1>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+
+        <!-- This message will be shown if login fails -->
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <!-- Link the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

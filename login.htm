@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login_form">
+        <div class="left">
+            <img src="image/bgshoe1.jpg">
+        </div>
+        <div class="right">
+            <h1>Cool Kicks</h1>
+    
+            <form id="loginForm">
+                <!-- <p>User Name</p> -->
+                <div class="user">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="username" type="text" name="user" placeholder="USERNAME" class="username">
+                </div>
+    
+                <!-- <p class="passworg_tag">Password</p> -->
+                <div class="password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input id="password" type="password" name="password" placeholder="PASSWORD">
+                </div>
+    
+                <!-- <p class="forget">Forget Password ?</p> -->
+    
+                <button class="login-btn" type="submit">Login</button>
+            </form>
+            <!-- This message will be shown if login fails -->
+            <p id="error-message" class="error-message"></p>
+        </div>
+    
+    </div>
+    <!-- Link the external JavaScript file -->
+    <script src="login.js"></script>
+</body>
+</html>
+    

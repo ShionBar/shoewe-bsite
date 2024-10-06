@@ -1,0 +1,56 @@
+/* General styles for the login page */
+body {
+    background: url(img/bg2.jpg) no-repeat;
+	background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+/* Login form container */
+.login-container {
+    width: 350px;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	position: absolute;
+	color: black;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 18px;
+	font-weight: bold;
+	margin:20px 0;
+	padding: 10px 15px;
+	width: 50%;
+	border-radius: 5px;
+	border:0;
+	cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
