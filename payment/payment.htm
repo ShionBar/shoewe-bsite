@@ -5,22 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" 
           content="width=device-width, initial-scale=1.0">
-    <title>Online Payment-Page</title>
+    <title>Cool Kicks</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="payment.css">
+    <link rel="shortcut icon" href="logo.jpg">
 </head>
 
 <body>
     <div class="bg"></div>
     <div class="container">
 
-        <form action="#">
+        <form id="paymentForm" action="#">
 
             <div class="row">
 
                 <div class="col">
-                    <h3 class="title">
-                        Billing Address
-                    </h3>
+                    <!-- <h3 class="title">
+                        Payment
+                    </h3> -->
 
                     <div class="inputBox">
                         <label for="name">
@@ -30,7 +32,14 @@
                                placeholder="Enter your full name" 
                                required>
                     </div>
-
+                    <div class="inputBox">
+                        <label for="contactNumber">
+                              Contact Number:
+                          </label>
+                        <input type="number" id="contactNumber" 
+                               placeholder="Enter contact number" 
+                               required>
+                    </div>
                     <div class="inputBox">
                         <label for="email">
                               Email:
@@ -67,25 +76,16 @@
                     </div>
                 </div>
                 <div class="col">
-                    <h3 class="title">Payment</h3>
+                    <!-- <h3 class="title">Payment</h3> -->
 
                     <div class="inputBox">
                         <label for="">Payment Option</label>
-                        <select name="" id="">
-                            <option value="">COD/Cash On Delivery</option>
-                            <option value="">GCash (Not yet available)</option>
-                            <option value="">Maya (Not yet available)</option>
+                        <select name="" id="paymentOption">
+                            <option value="COD/Cash On Delivery">COD/Cash On Delivery</option>
+                            <option value="GCash (Not yet available)">GCash (Not yet available)</option>
+                            <option value="Maya (Not yet available)">Maya (Not yet available)</option>
                         </select>
                     </div>
-
-                    <div class="inputBox">
-                        <label for="telephone">
-                              Telephone:
-                          </label>
-                        <input type="text" id="telephone" 
-                               placeholder="Telephone no." 
-                               required>
-
                 </div>
 
             </div>
@@ -96,6 +96,8 @@
 
     </div>
     <script src="payment.js"></script>
+    <script src="../products/scrip.js"></script>
+    
 </body>
 
 </html>

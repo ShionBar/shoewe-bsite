@@ -9,6 +9,7 @@ let addToCartButton = document.querySelector(".add-to-cart-button");
 
 var size;
 var color;
+var orderDetails = [];
 
 // btn[0].onclick = function(){
 //     productImg.src = "img/kobeshoe1.jpg";
@@ -150,11 +151,15 @@ function addToCartClicked(event) {
 
 function purchaseClicked() {
     // alert('Thank you for your purchase')
+    console.log(getCurrentOrder())
+    localStorage.setItem("currentOrder", getCurrentOrder())
     location.href = "../terms/terms.html";
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
+    
+    // var cartItems = document.getElementsByClassName('cart-items')[0]
+    // while (cartItems.hasChildNodes()) {
+    //     cartItems.removeChild(cartItems.firstChild)
+    // }
+    
     updateCartTotal()
 }
 
@@ -213,6 +218,25 @@ function updateCartTotal() {
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '₱' + total
+}
+
+function getCurrentOrder() {
+    var orderSummary = "| Product | Quantity | Unit Price | Total | <br />";
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var productTitle = cartRow.getElementsByClassName('cart-item-title')[0]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('₱','').replace(',',''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+        orderSummary += "| " + productTitle.innerText + " | " + quantity + " | " + price + " | " + total + " | <br />";
+    }
+    orderSummary += "<br /> ---- TOTAL PRICE: " + Math.round(total * 100) / 100 + "---- ";
+    return orderSummary;
 }
 
 
